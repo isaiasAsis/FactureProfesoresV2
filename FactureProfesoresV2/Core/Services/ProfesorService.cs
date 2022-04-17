@@ -3,6 +3,7 @@ using FactureProfesoresV2.DatabaseInsight;
 using FactureProfesoresV2.Domain;
 using FactureProfesoresV2.Models;
 using RestSharp;
+using System.Globalization;
 using System.Text.Json;
 
 namespace FactureProfesoresV2.Core.Services
@@ -30,6 +31,8 @@ namespace FactureProfesoresV2.Core.Services
             }
 
             profesorCrear.Equivalencia = _exchange.conversion_rates.COP;
+
+            profesorCrear.Tipo_profesor =  CultureInfo.InvariantCulture.TextInfo.ToUpper(profesorCrear.Tipo_profesor);
 
             _profesorRepository.ProfesoresCrear(profesorCrear: profesorCrear);
         }

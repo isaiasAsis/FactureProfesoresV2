@@ -12,7 +12,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 var swaggerGroup = new List<string>()
 {
-    "Profesores"
+    "Profesores",
+    "Lecciones",
+    "Nomina"
 };
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -27,6 +29,10 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddTransient<IProfesorService, ProfesorService>();
 builder.Services.AddTransient<IProfesorRepository, ProfesorRepository>();
+builder.Services.AddTransient<ILeccionService, LeccionService>();
+builder.Services.AddTransient<ILeccionRepository, LeccionRepository>();
+builder.Services.AddTransient<INominaService, NominaService>();
+builder.Services.AddTransient<INominaRepository, NominaRepository>();
 builder.Services.AddTransient<IProfesorDBConection, ProfesorDBConnection>();
 var app = builder.Build();
 
