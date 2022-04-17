@@ -43,9 +43,8 @@ namespace FactureProfesoresV2.Controllers
 
                 return BadRequest(ex.Message);
             }
-            
-
-
+   
         }
+
     }
 }
