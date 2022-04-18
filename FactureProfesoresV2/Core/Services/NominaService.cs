@@ -11,7 +11,6 @@ namespace FactureProfesoresV2.Core.Services
     {
 
         private readonly IProfesorDBConection _profesorDbConnection;
-        private readonly INominaRepository _nominaRepository;
         private readonly ILeccionRepository _leccionRepository;
         private readonly IProfesorRepository _profesorRepository;
         public decimal totalNomina { get; set; }
@@ -20,18 +19,17 @@ namespace FactureProfesoresV2.Core.Services
         public string tipoMoneda { get; set; }
 
         public NominaService(IProfesorDBConection profesorDBConection,
-                                INominaRepository noinaRepository,
                                 ILeccionRepository leccionRepository,
                                 IProfesorRepository profesorRepository)
         {
             _profesorDbConnection = profesorDBConection;
-            _nominaRepository = noinaRepository;
             _leccionRepository = leccionRepository;
             _profesorRepository = profesorRepository;
         }
 
         public string GenerarNomina(GetLeccionesFilter leccionesFilter)
         {
+
             var lecciones = _leccionRepository.GetLecciones(leccionesFilter);
 
             var profesores = _profesorRepository.GetProfesores();
