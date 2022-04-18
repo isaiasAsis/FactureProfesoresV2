@@ -22,18 +22,6 @@ namespace FactureProfesoresV2.Core.Repository
                                                .LeccionCrear(leccionCrear: leccionCrear);
         }
 
-        //public (IEnumerable<GetLecciones> lecciones, int? totalRows) GetLecciones(GetLeccionesFilter leccionesFilter)
-        //{
-        //    var lecciones = _profesorDbConnection.GetCurrent().As<ProfesorDBConnection_Profesor>()
-        //                                       .GetLecciones(getLeccionesFilter: leccionesFilter);
-
-        //    var totalRows = lecciones.FirstOrDefault()?.num_TotalFilas;
-
-        //    var leccionesEntity = lecciones.Select(leccionesResponse => new GetLecciones(leccionesResponse)).ToList();
-
-        //    return (leccionesEntity, totalRows);
-        //}
-
         public List<LeccionModel> GetLecciones(GetLeccionesFilter leccionesFilter)
         {
             return _profesorDbConnection.GetCurrent().As<ProfesorDBConnection_Profesor>()

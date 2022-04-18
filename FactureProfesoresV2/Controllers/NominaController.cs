@@ -26,7 +26,6 @@ namespace FactureProfesoresV2.Controllers
 
             try
             {
-
                 var result = _nominaService.GenerarNomina(nominaFilter);
 
                 return Ok(result);

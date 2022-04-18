@@ -32,7 +32,6 @@ builder.Services.AddTransient<IProfesorRepository, ProfesorRepository>();
 builder.Services.AddTransient<ILeccionService, LeccionService>();
 builder.Services.AddTransient<ILeccionRepository, LeccionRepository>();
 builder.Services.AddTransient<INominaService, NominaService>();
-builder.Services.AddTransient<INominaRepository, NominaRepository>();
 builder.Services.AddTransient<IProfesorDBConection, ProfesorDBConnection>();
 var app = builder.Build();
 
